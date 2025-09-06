@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Reset & base */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Use system font stack */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+/* Full width layout */
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff; /* Let Tailwind control themes */
+  color: #213547;
+}
+
+/* Anchor defaults */
+/* a {
+  color: inherit;
+  text-decoration: none;
+} */
+/* a:hover {
+  text-decoration: underline;
+} */
+
+/* Buttons — let Tailwind handle most, keep minimal base */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
