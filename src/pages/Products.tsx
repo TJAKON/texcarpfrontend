@@ -68,7 +68,7 @@ export default function Products() {
         </div>
       </section>
       {/* Title Area */}
-      <section className="relative bg-amber-100/80 py-8">
+      <section className="relative bg-amber-100/60 py-8">
         <div className="container mx-auto px-6">
           {/* faded centered heading */}
           {/* <h1
