@@ -40,7 +40,7 @@ function Room({
   wallTexture,
   tileSize,
   openFront = true,
-  onTileClick,
+//   onTileClick,
 }: RoomProps) {
   const wall = useTexture(wallTexture);
   wall.wrapS = wall.wrapT = THREE.RepeatWrapping;
