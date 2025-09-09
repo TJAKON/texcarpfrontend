@@ -26,7 +26,9 @@ export default function Products() {
   const [viewInColor, setViewInColor] = useState(false);
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
   const [filterNewOnly, setFilterNewOnly] = useState(false);
+  const [filterFavoritesOnly, setFilterFavoritesOnly] = useState(false);
   const [search, setSearch] = useState("");
+  const [showFilterPanel, setShowFilterPanel] = useState(false);
 
   // toggle favorite
   const toggleFavorite = (id: string) => {
@@ -37,26 +39,23 @@ export default function Products() {
   const filteredItems = useMemo(() => {
     return items.filter((it) => {
       if (filterNewOnly && !it.isNew) return false;
+      if (filterFavoritesOnly && !favorites[it.id]) return false;
       if (search && !it.sku.toLowerCase().includes(search.toLowerCase()))
         return false;
       return true;
     });
-  }, [filterNewOnly, search]);
+  }, [filterNewOnly, filterFavoritesOnly, favorites, search]);
 
   return (
     <div className="min-h-screen w-full bg-gray-50">
+      {/* Banner */}
       <section className="relative w-full h-[70vh] md:h-[50vh] flex items-end justify-center">
-        {/* Background Image */}
         <img
-          src="/carpet8.jpeg" // replace with your banner image
+          src="/carpet8.jpeg"
           alt="TexCarp Banner"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60" />
-
-        {/* Text Content */}
         <div className="relative z-10 text-center text-white px-6">
           <h1 className="text-4xl md:text-6xl font-thin uppercase text-yellow-400 mb-4">
             Products
@@ -67,20 +66,12 @@ export default function Products() {
           </p>
         </div>
       </section>
-      {/* Title Area */}
+
+      {/* Controls */}
       <section className="relative bg-amber-100/60 py-8">
         <div className="container mx-auto px-6">
-          {/* faded centered heading */}
-          {/* <h1
-            className="pointer-events-none select-none text-center text-6xl md:text-7xl font-serif text-gray-200"
-            aria-hidden
-          >
-            Products
-          </h1> */}
-
-          {/* Controls row */}
           <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Left: Search */}
+            {/* Search */}
             <div className="flex items-center w-full md:w-1/3">
               <input
                 type="text"
@@ -98,12 +89,12 @@ export default function Products() {
                 <button
                   onClick={() => setViewInColor((s) => !s)}
                   className={`relative inline-flex items-center h-6 w-12 rounded-full transition-colors
-                    ${viewInColor ? "bg-indigo-600" : "bg-gray-300"}`}
+                    ${viewInColor ? "bg-blue-800/90" : "bg-gray-300"}`}
                   aria-pressed={viewInColor}
                 >
                   <span
                     className={`inline-block h-4 w-4 rounded-full bg-white transform transition-transform ${
-                      viewInColor ? "translate-x-6" : "translate-x-1"
+                      viewInColor ? "translate-x-7" : "translate-x-1"
                     }`}
                   />
                 </button>
@@ -112,11 +103,8 @@ export default function Products() {
 
             {/* Right icons */}
             <div className="flex items-center gap-4 ml-auto">
-              {/* Favorites */}
-              <button
-                onClick={() => setFilterNewOnly(false)}
-                className="flex items-center gap-2 border rounded-full px-4 py-2 hover:bg-gray-100"
-              >
+              {/* Favorites count */}
+              <button className="flex items-center gap-2 border rounded-full px-4 py-2 hover:bg-gray-100">
                 <Heart
                   className={`${
                     Object.values(favorites).some(Boolean) ? "text-red-500" : ""
@@ -127,24 +115,64 @@ export default function Products() {
                 </span>
               </button>
 
-              {/* Filter new only */}
+              {/* Filter toggle */}
               <button
-                onClick={() => setFilterNewOnly((s) => !s)}
-                className={`flex items-center gap-2 border rounded-full px-4 py-2 hover:bg-gray-100 ${
-                  filterNewOnly ? "bg-indigo-50 border-indigo-400" : ""
-                }`}
+                onClick={() => setShowFilterPanel(true)}
+                className="flex items-center gap-2 border rounded-full px-4 py-2 hover:bg-gray-100"
               >
                 <FiFilter />
-                <span className="hidden md:inline">
-                  {filterNewOnly ? "New Only" : "Filter (0)"}
-                </span>
+                <span className="hidden md:inline">Filter</span>
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <hr className="border-gray-200" />
+      {/* Filter Panel (drawer) */}
+      {showFilterPanel && (
+        <div className="fixed inset-0 bg-black/40 flex justify-end z-50">
+          <div className="w-80 bg-white h-full shadow-lg p-6 flex flex-col">
+            <h2 className="text-lg font-semibold mb-4">Filters</h2>
+
+            {/* New only */}
+            <label className="flex items-center gap-3 mb-4">
+              <input
+                type="checkbox"
+                checked={filterNewOnly}
+                onChange={(e) => setFilterNewOnly(e.target.checked)}
+              />
+              <span>New Only</span>
+            </label>
+
+            {/* Favorites only */}
+            <label className="flex items-center gap-3 mb-4">
+              <input
+                type="checkbox"
+                checked={filterFavoritesOnly}
+                onChange={(e) => setFilterFavoritesOnly(e.target.checked)}
+              />
+              <span>Favorites Only</span>
+            </label>
+
+            {/* View in color toggle */}
+            <label className="flex items-center gap-3 mb-4">
+              <input
+                type="checkbox"
+                checked={viewInColor}
+                onChange={(e) => setViewInColor(e.target.checked)}
+              />
+              <span>View in Color</span>
+            </label>
+
+            <button
+              onClick={() => setShowFilterPanel(false)}
+              className="mt-auto bg-indigo-600 text-white px-4 py-2 rounded"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Product Grid */}
       <section className="container mx-auto px-6 py-12">
@@ -158,23 +186,18 @@ export default function Products() {
                 className="group bg-white rounded-xl overflow-hidden relative shadow-sm"
               >
                 <div className="relative h-44 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
-                  {/* image */}
                   <img
                     src={it.image}
                     alt={it.sku}
-                    className={`w-full h-44 object-cover transition-transform group-hover:scale-120 ${
+                    className={`w-full h-44 object-cover transition-transform group-hover:scale-110 ${
                       viewInColor ? "" : "filter grayscale"
                     }`}
                   />
-
-                  {/* New badge */}
                   {it.isNew && (
                     <div className="absolute top-3 left-3 bg-yellow-400 text-black text-sm font-medium px-3 py-1 rounded-full shadow">
                       New
                     </div>
                   )}
-
-                  {/* Favorite toggle */}
                   <button
                     onClick={() => toggleFavorite(it.id)}
                     className="absolute top-3 right-3 p-2 bg-white rounded-full shadow hover:scale-110 transition"
@@ -186,11 +209,8 @@ export default function Products() {
                     />
                   </button>
                 </div>
-
-                {/* SKU / actions */}
                 <div className="px-3 py-3">
                   <div className="text-sm text-gray-600 mb-2">{it.sku}</div>
-
                   <div className="flex items-center justify-between gap-2">
                     <Link
                       to={`/product/${it.sku}`}
@@ -202,16 +222,14 @@ export default function Products() {
                       <button
                         title="Add to cart"
                         className="p-2 rounded hover:bg-gray-100"
-                        aria-label="Add to cart"
                       >
                         <FiShoppingCart className="h-6 w-6" />
                       </button>
                       <button
                         title="Quick view"
                         className="p-2 rounded hover:bg-gray-100"
-                        aria-label="Quick view"
                       >
-                        <FiSearch className="h-6 w-6"/>
+                        <FiSearch className="h-6 w-6" />
                       </button>
                     </div>
                   </div>

@@ -34,11 +34,9 @@ export default function Home() {
         </video>
 
         {/* Glass-like Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 backdrop-blur-sm" />
-
-        {/* Floating Decorative Elements for Depth */}
-        <div className="absolute top-10 left-10 w-24 h-24 bg-yellow-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-16 right-20 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl animate-bounce" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 backdrop-blur-xs" />
+        <div className="absolute top-10 left-10 w-40 h-40 bg-yellow-400/20 blur-3xl rounded-full  animate-pulse" />
+        <div className="absolute bottom-16 right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl animate-bounce" />
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">

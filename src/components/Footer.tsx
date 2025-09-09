@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 relative">
+    <footer className="bg-white container mx-auto border-t border-gray-200 relative">
       <div className="px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo + Tagline */}
         <div>

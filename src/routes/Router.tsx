@@ -6,6 +6,7 @@ import WebsiteLayout from "../layout/WebsiteLayout";
 import Products from "../pages/Products";
 import ProductDetails from "../pages/ProductDetails";
 
+
 const Router = () => {
   return (
     <Routes>
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="products" element={<Products />} />
+        <Route path="blogs" element={<About />} />
 
         <Route path="/product/:sku" element={<ProductDetails />} />
       </Route>

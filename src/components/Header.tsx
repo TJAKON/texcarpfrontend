@@ -7,20 +7,20 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white backdrop-blur-md shadow-md z-50">
-      <div className=" mx-auto px-6 py-4 flex justify-between items-center">
+      <div className=" container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <p className=" text-7xl font-extralight text-blue-950/80">
+          <p className=" text-6xl font-extralight text-blue-950/80">
             Tex
-            <span className="text-yellow-600/80 text-6xl font-thin uppercase">
+            <span className="text-yellow-600/80 text-5xl font-thin uppercase">
               Carp
             </span>
           </p>
-          <img src="/logo1.png" alt="TexCarp Logo" className="h-20 w-auto" />
+          <img src="/logo1.png" alt="TexCarp Logo" className="h-18 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 font-thin text-blue-950/80 text-5xl uppercase ">
+        <nav className="hidden md:flex items-center space-x-8 font-thin text-blue-950 text-2xl uppercase ">
           <Link
             to="/"
             className=" hover:text-yellow-400/95 transition duration-400 delay-50"
