@@ -1,5 +1,5 @@
 import React from "react";
-import type { TileColors } from "../types";
+import type { TileColors } from "../../hooks/boardloom/types";
 
 interface Props {
   label: string;

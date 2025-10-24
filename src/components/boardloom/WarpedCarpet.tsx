@@ -1,7 +1,7 @@
 import React from "react";
 import { Shape } from "react-konva";
-import { getPerspectiveTransform } from "../utils/perspective";
-import type { Point } from "../types";
+import { getPerspectiveTransform } from "../../utils/perspective";
+import type { Point } from "../../hooks/boardloom/types";
 
 interface Props {
   points: Point[];

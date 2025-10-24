@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { TileColors } from "../types";
+import type { TileColors } from "../../hooks/boardloom/types";
 
 const SVG_PATH = "/tiletwo.svg";
 console.log("SVG_PATH", SVG_PATH);
