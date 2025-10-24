@@ -16,7 +16,7 @@ const items: Item[] = [
   {
     id: "1",
     sku: "ZD501",
-    image: "/tiles/tile1/Organic_1_Blue.png",
+    image: "/tiles/tile1/Organic_1_Yellow.png",
     category: "Broadloom",
     isNew: true,
   },
