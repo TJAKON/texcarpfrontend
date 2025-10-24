@@ -2,8 +2,8 @@
     "products": [
         {
             "id": "1",
-            "sku": "ZD501",
-            "image": "/tiles/tile1/Organic_1_Blue.png",
+            "sku": "ZD508",
+            "image": "/tiles/tile2/B7038 Lomax_4501 Hudson_Option 2.png",
             "isNew": true,
             "colors": [
                 {
@@ -52,15 +52,15 @@
             "colorways": [
                 {
                     "sku": "ZD601",
-                    "image": "/tiles/tile1/Organic_1_Pink.png"
+                    "image": "/tiles/tile2/B7038 Lomax_4501 Hudson.png"
                 },
                 {
                     "sku": "ZD602",
-                    "image": "/tiles/tile1/Organic_1_Red.png"
+                    "image": "/tiles/tile2/B7038 Lomax_4501 Hudson_Option 1.png"
                 },
                 {
                     "sku": "ZD603",
-                    "image": "/tiles/tile1/Organic_1_Yellow.png"
+                    "image": "/tiles/tile2/B7038 Lomax_4501 Hudson_Option 3.png"
                 }
             ],
             "coordinates": [
@@ -105,17 +105,17 @@
                 "patterns": [
                     {
                         "name": "S4003 Hue",
-                        "image": "/tiles/tile1/Organic_1_Pink.png",
+                        "image": "/tiles/tile2/B7038 Lomax_4501 Hudson.png",
                         "options": 21
                     },
                     {
                         "name": "SG036 Mystic",
-                        "image": "/tiles/tile1/Organic_1_Red.png",
+                        "image": "/tiles/tile2/B7038 Lomax_4501 Hudson_Option 1.png",
                         "options": 1
                     },
                     {
                         "name": "SG037 Mystic",
-                        "image": "/tiles/tile1/Organic_1_Yellow.png",
+                        "image": "/tiles/tile2/B7038 Lomax_4501 Hudson_Option 3.png",
                         "options": 1
                     }
                 ]

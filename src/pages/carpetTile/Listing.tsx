@@ -1,4 +1,3 @@
-// src/pages/Products.tsx
 import { Heart } from "lucide-react";
 import { useState, useMemo } from "react";
 import { FiFilter } from "react-icons/fi";
@@ -8,44 +7,12 @@ type Item = {
   id: string;
   sku: string;
   image: string;
-  category: "Broadloom" | "Carpet Tile";
+  category: "Carpet Tile";
   isNew?: boolean;
 };
 
-// Example items with categories
+// ✅ Carpet Tile products only
 const items: Item[] = [
-  {
-    id: "1",
-    sku: "ZD501",
-    image: "/tiles/tile1/Organic_1_Blue.png",
-    category: "Broadloom",
-    isNew: true,
-  },
-  {
-    id: "2",
-    sku: "ZD502",
-    image: "/tiles/tile3/Z81544_SG011- Completed.png",
-    category: "Broadloom",
-  },
-  {
-    id: "3",
-    sku: "ZD503",
-    image: "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png",
-    category: "Broadloom",
-  },
-  {
-    id: "4",
-    sku: "ZD504",
-    image: "/tiles/tile6/I83087 opt 1.png",
-    category: "Broadloom",
-    isNew: true,
-  },
-  {
-    id: "5",
-    sku: "ZD505",
-    image: "/tiles/tile9/Z81541_SG008-Completed.png",
-    category: "Broadloom",
-  },
   {
     id: "6",
     sku: "ZD506",
@@ -57,19 +24,18 @@ const items: Item[] = [
     sku: "ZD507",
     image: "/tiles/tile5/Flat File Request Completed_Option 4.png",
     category: "Carpet Tile",
+    isNew: true,
   },
   {
     id: "8",
     sku: "ZD508",
     image: "/tiles/tile2/B7038 Lomax_4501 Hudson_Option 2.png",
     category: "Carpet Tile",
+    isNew: true,
   },
 ];
 
-export default function Products() {
-  const [category, setCategory] = useState<"Broadloom" | "Carpet Tile">(
-    "Carpet Tile"
-  );
+export default function Listing() {
   const [viewInColor, setViewInColor] = useState(false);
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
   const [filterNewOnly, setFilterNewOnly] = useState(false);
@@ -77,20 +43,21 @@ export default function Products() {
   const [search, setSearch] = useState("");
   const [showFilterPanel, setShowFilterPanel] = useState(false);
 
+  // Toggle favorite
   const toggleFavorite = (id: string) => {
     setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  // Filter logic
   const filteredItems = useMemo(() => {
     return items.filter((it) => {
-      if (it.category !== category) return false; // filter by category
       if (filterNewOnly && !it.isNew) return false;
       if (filterFavoritesOnly && !favorites[it.id]) return false;
       if (search && !it.sku.toLowerCase().includes(search.toLowerCase()))
         return false;
       return true;
     });
-  }, [category, filterNewOnly, filterFavoritesOnly, favorites, search]);
+  }, [filterNewOnly, filterFavoritesOnly, favorites, search]);
 
   return (
     <div className="min-h-screen w-full bg-gray-50">
@@ -104,29 +71,13 @@ export default function Products() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-6">
           <h1 className="text-4xl md:text-6xl font-thin uppercase text-yellow-400 mb-4">
-            Products
+            Carpet Tile Collection
           </h1>
           <p className="text-lg md:text-xl mb-6">
-            Experience carpets in <span className="font-semibold">2D & 3D</span>{" "}
-            like never before
+            Explore our premium{" "}
+            <span className="font-semibold text-yellow-300">Carpet Tile</span>{" "}
+            designs in 2D & 3D.
           </p>
-
-          {/* Category Switcher */}
-          <div className="flex justify-center gap-4 my-5">
-            {["Broadloom", "Carpet Tile"].map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setCategory(cat as "Broadloom" | "Carpet Tile")}
-                className={`px-6 py-2 rounded-full font-bold transition ${
-                  category === cat
-                    ? "bg-yellow-400 text-black"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -145,14 +96,15 @@ export default function Products() {
               />
             </div>
 
-            {/* Center toggle */}
+            {/* View in Color toggle */}
             <div className="flex-shrink-0 text-center">
               <label className="inline-flex items-center gap-3 text-gray-500">
                 <span>View in Color</span>
                 <button
                   onClick={() => setViewInColor((s) => !s)}
-                  className={`relative inline-flex items-center h-6 w-12 rounded-full transition-colors
-                    ${viewInColor ? "bg-blue-800/90" : "bg-gray-300"}`}
+                  className={`relative inline-flex items-center h-6 w-12 rounded-full transition-colors ${
+                    viewInColor ? "bg-blue-800/90" : "bg-gray-300"
+                  }`}
                   aria-pressed={viewInColor}
                 >
                   <span
@@ -245,58 +197,42 @@ export default function Products() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8">
             {filteredItems.map((it) => (
               <Link
-                to={`/product/${it.sku}`}
-                className="text-xs uppercase tracking-wide text-gray-700 hover:underline"
+                key={it.id}
+                to={`/carpettile/${it.sku}`}
+                className="group bg-white rounded-xl overflow-hidden relative shadow-sm hover:shadow-md transition"
               >
-                <article
-                  key={it.id}
-                  className="group bg-white rounded-xl overflow-hidden relative shadow-sm"
-                >
-                  <div className="relative h-60 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
-                    <img
-                      src={it.image}
-                      alt={it.sku}
-                      className={`w-full h-full object-cover transition-transform group-hover:scale-110 ${
-                        viewInColor ? "" : "filter grayscale"
+                <div className="relative h-60 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={it.image}
+                    alt={it.sku}
+                    className={`w-full h-full object-cover transition-transform group-hover:scale-110 ${
+                      viewInColor ? "" : "filter grayscale"
+                    }`}
+                  />
+                  {it.isNew && (
+                    <div className="absolute top-3 left-3 bg-yellow-400 text-black text-sm font-medium px-3 py-1 rounded-full shadow">
+                      New
+                    </div>
+                  )}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleFavorite(it.id);
+                    }}
+                    className="absolute top-3 right-3 p-2 bg-white rounded-full shadow hover:scale-110 transition"
+                  >
+                    <Heart
+                      className={`${
+                        favorites[it.id] ? "text-red-500" : "text-black"
                       }`}
                     />
-                    {it.isNew && (
-                      <div className="absolute top-3 left-3 bg-yellow-400 text-black text-sm font-medium px-3 py-1 rounded-full shadow">
-                        New
-                      </div>
-                    )}
-                    <button
-                      onClick={() => toggleFavorite(it.id)}
-                      className="absolute top-3 right-3 p-2 bg-white rounded-full shadow hover:scale-110 transition"
-                    >
-                      <Heart
-                        className={`${
-                          favorites[it.id] ? "text-red-500" : "text-black"
-                        }`}
-                      />
-                    </button>
+                  </button>
+                </div>
+                <div className="px-3 py-3 text-center">
+                  <div className="text-sm text-gray-600 font-semibold">
+                    {it.sku}
                   </div>
-                  <div className="px-3 py-3">
-                    <div className="text-sm text-gray-600 mb-2">{it.sku}</div>
-                    {/* <div className="flex items-center justify-between gap-2">
-                      View
-                      <div className="flex gap-2 items-center">
-                        <button
-                          title="Add to cart"
-                          className="p-2 rounded hover:bg-gray-100"
-                        >
-                          <FiShoppingCart className="h-6 w-6" />
-                        </button>
-                        <button
-                          title="Quick view"
-                          className="p-2 rounded hover:bg-gray-100"
-                        >
-                          <FiSearch className="h-6 w-6" />
-                        </button>
-                      </div>
-                    </div> */}
-                  </div>
-                </article>
+                </div>
               </Link>
             ))}
           </div>

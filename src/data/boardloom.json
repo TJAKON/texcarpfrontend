@@ -76,50 +76,7 @@
                     "sku": "ZD504",
                     "image": "/tiles/tile6/I83087 opt 1.png"
                 }
-            ],
-            "configure": {
-                "sizes": [
-                    {
-                        "label": "24×24",
-                        "bgColor": "#d6c5a0"
-                    }
-                ],
-                "installs": [
-                    {
-                        "name": "MONOLITHIC",
-                        "image": "/configure/mono.png"
-                    },
-                    {
-                        "name": "QUARTER TURN",
-                        "image": "/configure/quarter.png"
-                    },
-                    {
-                        "name": "ASHLAR VERTICAL",
-                        "image": "/configure/ashlar-vert.png"
-                    },
-                    {
-                        "name": "ASHLAR HORIZONTAL",
-                        "image": "/configure/ashlar-horiz.png"
-                    }
-                ],
-                "patterns": [
-                    {
-                        "name": "S4003 Hue",
-                        "image": "/tiles/tile1/Organic_1_Pink.png",
-                        "options": 21
-                    },
-                    {
-                        "name": "SG036 Mystic",
-                        "image": "/tiles/tile1/Organic_1_Red.png",
-                        "options": 1
-                    },
-                    {
-                        "name": "SG037 Mystic",
-                        "image": "/tiles/tile1/Organic_1_Yellow.png",
-                        "options": 1
-                    }
-                ]
-            }
+            ]
         }
     ]
 }

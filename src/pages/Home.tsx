@@ -1,5 +1,6 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const panels = [
   { id: 1, title: "Customize", image: "/carpet5.jpeg" },
@@ -52,7 +53,7 @@ export default function Home() {
           </p>
 
           {/* Call to Action */}
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <Link
               to="/products"
               className="px-8 py-4 bg-yellow-400 text-black text-xl font-semibold rounded-full shadow-2xl hover:bg-yellow-500 transform hover:scale-105 hover:-rotate-1 transition"
@@ -66,7 +67,7 @@ export default function Home() {
             >
               Learn More
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
