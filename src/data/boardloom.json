@@ -5,29 +5,79 @@
       "sku": "ZD501",
       "image": "/tiles/tile1/Organic_1_Yellow.png",
       "isNew": true,
+      "width": 1440,
+      "length": 1980,
       "colors": [
-        { "code": "#D6CBB5", "label": "3019" },
-        { "code": "#3C322B", "label": "3120" },
-        { "code": "#5A636E", "label": "3507" },
-        { "code": "#8C885A", "label": "3415" }
+        {
+          "code": "#D6CBB5",
+          "label": "3019"
+        },
+        {
+          "code": "#3C322B",
+          "label": "3120"
+        },
+        {
+          "code": "#5A636E",
+          "label": "3507"
+        },
+        {
+          "code": "#8C885A",
+          "label": "3415"
+        }
       ],
       "rooms": [
-        { "name": "Living Room", "image": "/rooms/living.jpeg" },
-        { "name": "Master Bedroom", "image": "/rooms/bedroom1.jpeg" },
-        { "name": "Bedroom", "image": "/rooms/bedroom.jpeg" },
-        { "name": "Dining Room", "image": "/rooms/dining.jpeg" },
-        { "name": "Office", "image": "/rooms/office.jpeg" },
-        { "name": "Hotel Lobby", "image": "/rooms/lobby.jpeg" }
+        {
+          "name": "Living Room",
+          "image": "/rooms/living.jpeg"
+        },
+        {
+          "name": "Master Bedroom",
+          "image": "/rooms/bedroom1.jpeg"
+        },
+        {
+          "name": "Bedroom",
+          "image": "/rooms/bedroom.jpeg"
+        },
+        {
+          "name": "Dining Room",
+          "image": "/rooms/dining.jpeg"
+        },
+        {
+          "name": "Office",
+          "image": "/rooms/office.jpeg"
+        },
+        {
+          "name": "Hotel Lobby",
+          "image": "/rooms/lobby.jpeg"
+        }
       ],
       "colorways": [
-        { "sku": "ZD601", "image": "/tiles/tile1/Organic_1_Pink.png" },
-        { "sku": "ZD602", "image": "/tiles/tile1/Organic_1_Red.png" },
-        { "sku": "ZD603", "image": "/tiles/tile1/Organic_1_Blue.png" }
+        {
+          "sku": "ZD601",
+          "image": "/tiles/tile1/Organic_1_Pink.png"
+        },
+        {
+          "sku": "ZD602",
+          "image": "/tiles/tile1/Organic_1_Red.png"
+        },
+        {
+          "sku": "ZD603",
+          "image": "/tiles/tile1/Organic_1_Blue.png"
+        }
       ],
       "coordinates": [
-        { "sku": "ZD502", "image": "/tiles/tile3/Z81544_SG011- Completed.png" },
-        { "sku": "ZD503", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png" },
-        { "sku": "ZD504", "image": "/tiles/tile6/I83087 opt 1.png" }
+        {
+          "sku": "ZD502",
+          "image": "/tiles/tile3/Z81544_SG011- Completed.png"
+        },
+        {
+          "sku": "ZD503",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png"
+        },
+        {
+          "sku": "ZD504",
+          "image": "/tiles/tile6/I83087 opt 1.png"
+        }
       ]
     },
     {
@@ -35,28 +85,75 @@
       "sku": "ZD502",
       "image": "/tiles/tile3/Z81544_SG011- Completed.png",
       "isNew": false,
+      "width": 1440,
+      "length": 1980,
       "colors": [
-        { "code": "#F1E6D0", "label": "3020" },
-        { "code": "#6C5F4B", "label": "3121" },
-        { "code": "#7E8C99", "label": "3508" }
+        {
+          "code": "#F1E6D0",
+          "label": "3020"
+        },
+        {
+          "code": "#6C5F4B",
+          "label": "3121"
+        },
+        {
+          "code": "#7E8C99",
+          "label": "3508"
+        }
       ],
       "rooms": [
-       { "name": "Living Room", "image": "/rooms/living.jpeg" },
-        { "name": "Master Bedroom", "image": "/rooms/bedroom1.jpeg" },
-        { "name": "Bedroom", "image": "/rooms/bedroom.jpeg" },
-        { "name": "Dining Room", "image": "/rooms/dining.jpeg" },
-        { "name": "Office", "image": "/rooms/office.jpeg" },
-        { "name": "Hotel Lobby", "image": "/rooms/lobby.jpeg" }
+        {
+          "name": "Living Room",
+          "image": "/rooms/living.jpeg"
+        },
+        {
+          "name": "Master Bedroom",
+          "image": "/rooms/bedroom1.jpeg"
+        },
+        {
+          "name": "Bedroom",
+          "image": "/rooms/bedroom.jpeg"
+        },
+        {
+          "name": "Dining Room",
+          "image": "/rooms/dining.jpeg"
+        },
+        {
+          "name": "Office",
+          "image": "/rooms/office.jpeg"
+        },
+        {
+          "name": "Hotel Lobby",
+          "image": "/rooms/lobby.jpeg"
+        }
       ],
       "colorways": [
-        { "sku": "ZD604", "image": "/tiles/tile3/Z81544_SG011- Completed_Option 1.png" },
-        { "sku": "ZD605", "image": "/tiles/tile3/Z81544_SG011- Completed_Option 2.png" },
-        { "sku": "ZD606", "image": "/tiles/tile3/Z81544_SG011- Completed_Option 3.png" }
+        {
+          "sku": "ZD604",
+          "image": "/tiles/tile3/Z81544_SG011- Completed_Option 1.png"
+        },
+        {
+          "sku": "ZD605",
+          "image": "/tiles/tile3/Z81544_SG011- Completed_Option 2.png"
+        },
+        {
+          "sku": "ZD606",
+          "image": "/tiles/tile3/Z81544_SG011- Completed_Option 3.png"
+        }
       ],
       "coordinates": [
-        { "sku": "ZD505", "image": "/tiles/tile1/Organic_1_Yellow.png" },
-        { "sku": "ZD506", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png" },
-        { "sku": "ZD507", "image": "/tiles/tile6/I83087 opt 1.png" }
+        {
+          "sku": "ZD505",
+          "image": "/tiles/tile1/Organic_1_Yellow.png"
+        },
+        {
+          "sku": "ZD506",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png"
+        },
+        {
+          "sku": "ZD507",
+          "image": "/tiles/tile6/I83087 opt 1.png"
+        }
       ]
     },
     {
@@ -64,27 +161,71 @@
       "sku": "ZD503",
       "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png",
       "isNew": true,
+      "width": 1440,
+      "length": 1980,
       "colors": [
-        { "code": "#C2D6C9", "label": "3030" },
-        { "code": "#4A4F3D", "label": "3122" }
+        {
+          "code": "#C2D6C9",
+          "label": "3030"
+        },
+        {
+          "code": "#4A4F3D",
+          "label": "3122"
+        }
       ],
       "rooms": [
-         { "name": "Living Room", "image": "/rooms/living.jpeg" },
-        { "name": "Master Bedroom", "image": "/rooms/bedroom1.jpeg" },
-        { "name": "Bedroom", "image": "/rooms/bedroom.jpeg" },
-        { "name": "Dining Room", "image": "/rooms/dining.jpeg" },
-        { "name": "Office", "image": "/rooms/office.jpeg" },
-        { "name": "Hotel Lobby", "image": "/rooms/lobby.jpeg" }
+        {
+          "name": "Living Room",
+          "image": "/rooms/living.jpeg"
+        },
+        {
+          "name": "Master Bedroom",
+          "image": "/rooms/bedroom1.jpeg"
+        },
+        {
+          "name": "Bedroom",
+          "image": "/rooms/bedroom.jpeg"
+        },
+        {
+          "name": "Dining Room",
+          "image": "/rooms/dining.jpeg"
+        },
+        {
+          "name": "Office",
+          "image": "/rooms/office.jpeg"
+        },
+        {
+          "name": "Hotel Lobby",
+          "image": "/rooms/lobby.jpeg"
+        }
       ],
       "colorways": [
-        { "sku": "ZD606", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed_Option 1.png" },
-        { "sku": "ZD607", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed_Option 2.png" },
-        { "sku": "ZD608", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed_Option 3.png" }
+        {
+          "sku": "ZD606",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed_Option 1.png"
+        },
+        {
+          "sku": "ZD607",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed_Option 2.png"
+        },
+        {
+          "sku": "ZD608",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed_Option 3.png"
+        }
       ],
       "coordinates": [
-             { "sku": "ZD506", "image": "/tiles/tile1/Organic_1_Yellow.png" },
-        { "sku": "ZD507", "image": "/tiles/tile3/Z81544_SG011- Completed.png" },
-        { "sku": "ZD508", "image": "/tiles/tile6/I83087 opt 1.png" }
+        {
+          "sku": "ZD506",
+          "image": "/tiles/tile1/Organic_1_Yellow.png"
+        },
+        {
+          "sku": "ZD507",
+          "image": "/tiles/tile3/Z81544_SG011- Completed.png"
+        },
+        {
+          "sku": "ZD508",
+          "image": "/tiles/tile6/I83087 opt 1.png"
+        }
       ]
     },
     {
@@ -92,28 +233,71 @@
       "sku": "ZD504",
       "image": "/tiles/tile6/I83087 opt 1.png",
       "isNew": false,
+      "width": 1440,
+      "length": 1980,
       "colors": [
-        { "code": "#D3D3D3", "label": "3040" },
-        { "code": "#5B5B5B", "label": "3123" }
+        {
+          "code": "#D3D3D3",
+          "label": "3040"
+        },
+        {
+          "code": "#5B5B5B",
+          "label": "3123"
+        }
       ],
       "rooms": [
-           { "name": "Living Room", "image": "/rooms/living.jpeg" },
-        { "name": "Master Bedroom", "image": "/rooms/bedroom1.jpeg" },
-        { "name": "Bedroom", "image": "/rooms/bedroom.jpeg" },
-        { "name": "Dining Room", "image": "/rooms/dining.jpeg" },
-        { "name": "Office", "image": "/rooms/office.jpeg" },
-        { "name": "Hotel Lobby", "image": "/rooms/lobby.jpeg" }
+        {
+          "name": "Living Room",
+          "image": "/rooms/living.jpeg"
+        },
+        {
+          "name": "Master Bedroom",
+          "image": "/rooms/bedroom1.jpeg"
+        },
+        {
+          "name": "Bedroom",
+          "image": "/rooms/bedroom.jpeg"
+        },
+        {
+          "name": "Dining Room",
+          "image": "/rooms/dining.jpeg"
+        },
+        {
+          "name": "Office",
+          "image": "/rooms/office.jpeg"
+        },
+        {
+          "name": "Hotel Lobby",
+          "image": "/rooms/lobby.jpeg"
+        }
       ],
       "colorways": [
-        { "sku": "ZD607", "image": "/tiles/tile6/I83087 opt 1_Option 1.png" },
-        { "sku": "ZD608", "image": "/tiles/tile6/I83087 opt 1_Option 2.png" },
-        { "sku": "ZD609", "image": "/tiles/tile6/I83087 opt 1_Option 3.png" }
-   
+        {
+          "sku": "ZD607",
+          "image": "/tiles/tile6/I83087 opt 1_Option 1.png"
+        },
+        {
+          "sku": "ZD608",
+          "image": "/tiles/tile6/I83087 opt 1_Option 2.png"
+        },
+        {
+          "sku": "ZD609",
+          "image": "/tiles/tile6/I83087 opt 1_Option 3.png"
+        }
       ],
       "coordinates": [
-              { "sku": "ZD506", "image": "/tiles/tile1/Organic_1_Yellow.png" },
-        { "sku": "ZD507", "image": "/tiles/tile3/Z81544_SG011- Completed.png" },
-           { "sku": "ZD508", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png" }
+        {
+          "sku": "ZD506",
+          "image": "/tiles/tile1/Organic_1_Yellow.png"
+        },
+        {
+          "sku": "ZD507",
+          "image": "/tiles/tile3/Z81544_SG011- Completed.png"
+        },
+        {
+          "sku": "ZD508",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png"
+        }
       ]
     },
     {
@@ -121,27 +305,71 @@
       "sku": "ZD505",
       "image": "/tiles/tile9/Z81541_SG008-Completed.png",
       "isNew": true,
+      "width": 1440,
+      "length": 1980,
       "colors": [
-        { "code": "#EDE2D0", "label": "3050" },
-        { "code": "#6A5F4E", "label": "3124" }
+        {
+          "code": "#EDE2D0",
+          "label": "3050"
+        },
+        {
+          "code": "#6A5F4E",
+          "label": "3124"
+        }
       ],
       "rooms": [
-            { "name": "Living Room", "image": "/rooms/living.jpeg" },
-        { "name": "Master Bedroom", "image": "/rooms/bedroom1.jpeg" },
-        { "name": "Bedroom", "image": "/rooms/bedroom.jpeg" },
-        { "name": "Dining Room", "image": "/rooms/dining.jpeg" },
-        { "name": "Office", "image": "/rooms/office.jpeg" },
-        { "name": "Hotel Lobby", "image": "/rooms/lobby.jpeg" }
+        {
+          "name": "Living Room",
+          "image": "/rooms/living.jpeg"
+        },
+        {
+          "name": "Master Bedroom",
+          "image": "/rooms/bedroom1.jpeg"
+        },
+        {
+          "name": "Bedroom",
+          "image": "/rooms/bedroom.jpeg"
+        },
+        {
+          "name": "Dining Room",
+          "image": "/rooms/dining.jpeg"
+        },
+        {
+          "name": "Office",
+          "image": "/rooms/office.jpeg"
+        },
+        {
+          "name": "Hotel Lobby",
+          "image": "/rooms/lobby.jpeg"
+        }
       ],
       "colorways": [
-        { "sku": "ZD607", "image": "/tiles/tile9/Z81541_SG008-Completed_Option 1.png" },
-        { "sku": "ZD608", "image": "/tiles/tile9/Z81541_SG008-Completed_Option 2.png" },
-        { "sku": "ZD609", "image": "/tiles/tile9/Z81541_SG008-Completed_Option 3.png" }
+        {
+          "sku": "ZD607",
+          "image": "/tiles/tile9/Z81541_SG008-Completed_Option 1.png"
+        },
+        {
+          "sku": "ZD608",
+          "image": "/tiles/tile9/Z81541_SG008-Completed_Option 2.png"
+        },
+        {
+          "sku": "ZD609",
+          "image": "/tiles/tile9/Z81541_SG008-Completed_Option 3.png"
+        }
       ],
       "coordinates": [
-          { "sku": "ZD507", "image": "/tiles/tile6/I83087 opt 1.png" },
-        { "sku": "ZD508", "image": "/tiles/tile3/Z81544_SG011- Completed.png" },
-           { "sku": "ZD509", "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png" }
+        {
+          "sku": "ZD507",
+          "image": "/tiles/tile6/I83087 opt 1.png"
+        },
+        {
+          "sku": "ZD508",
+          "image": "/tiles/tile3/Z81544_SG011- Completed.png"
+        },
+        {
+          "sku": "ZD509",
+          "image": "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png"
+        }
       ]
     }
   ]

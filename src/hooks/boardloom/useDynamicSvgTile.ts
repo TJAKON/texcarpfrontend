@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { TileColors } from "../../hooks/boardloom/types";
 
 const SVG_PATH = "/tiletwo.svg";
-console.log("SVG_PATH", SVG_PATH);
+// console.log("SVG_PATH", SVG_PATH);
 
 export const useDynamicSvgTile = (colors: TileColors) => {
   const [tileImage, setTileImage] = useState<HTMLImageElement>();

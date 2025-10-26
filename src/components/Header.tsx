@@ -28,12 +28,12 @@ export default function Header() {
               Broadloom
             </Link>
           </div>
-          <Link
+          {/* <Link
             to="/carpetTile"
             className="bg-yellow-400/90 hover:bg-yellow-500 text-black px-5 py-2 rounded-full font-semibold transition duration-300"
           >
             Carpet Tiles
-          </Link>
+          </Link> */}
         </div>
 
         {/* Desktop Navigation */}
