@@ -6,138 +6,87 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/60 backdrop-blur-xs shadow-md z-50">
-      <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full bg-white/60 backdrop-blur-md border-b border-gray-200 z-50 shadow-sm">
+      <div className="max-w-8xl mx-auto flex items-center justify-between px-4 md:px-8 py-4 sm:py-3">
         {/* Logo */}
-        <div className=" flex items-center gap-3">
-          <Link to="/" className="flex items-center">
-            <p className="text-6xl font-extralight text-blue-950/80">
+        <div className="flex items-center gap-4">
+          <Link to="/" className="flex items-center gap-2">
+            <p className="text-4xl md:text-6xl font-light text-blue-950">
               Tex
-              <span className="text-yellow-300/100 text-5xl font-thin uppercase">
-                Carp
-              </span>
+              <span className="text-yellow-400 font-thin uppercase">Carp</span>
             </p>
-            <img src="/logo1.png" alt="TexCarp Logo" className="h-18 w-auto" />
+            <img
+              src="/logo1.png"
+              alt="TexCarp Logo"
+              className="h-10 md:h-18 w-auto"
+            />
           </Link>
-
-          <div className="flex gap-3">
-            <Link
-              to="/broadloom"
-              className="bg-blue-900/90 hover:bg-blue-950 text-white px-5 py-2 rounded-full font-semibold transition duration-300"
-            >
-              Broadloom
-            </Link>
-          </div>
-          {/* <Link
-            to="/carpetTile"
-            className="bg-yellow-400/90 hover:bg-yellow-500 text-black px-5 py-2 rounded-full font-semibold transition duration-300"
+          {/* Desktop CTA Button */}
+          <Link
+            to="/broadloom"
+            className="hidden md:block bg-blue-900 hover:bg-blue-950 text-white text-xl px-8 py-3 rounded-full font-medium transition"
           >
-            Carpet Tiles
-          </Link> */}
+            Broadloom
+          </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 font-thin text-blue-950 text-2xl uppercase">
-          {/* <Link
-            to="/"
-            className="hover:text-yellow-400/95 transition duration-400 delay-50"
-          >
-            Home
-          </Link> */}
-          <Link
-            to="/About"
-            className="hover:text-yellow-400/95 transition duration-400 delay-50"
-          >
-            About Us
-          </Link>
-          {/* <Link
-            to="/Products"
-            className="hover:text-yellow-400/95 transition duration-400 delay-50"
-          >
-            Products
-          </Link> */}
+        {/* Right Controls */}
+        <div className="flex items-center gap-4">
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center gap-10 text-blue-950 text-3xl font-light uppercase">
+            <Link to="/About" className="hover:text-yellow-400 transition">
+              About us
+            </Link>
+            <Link to="/Contact" className="hover:text-yellow-400 transition">
+              Contact us
+            </Link>
+          </nav>
 
-          {/* Separate buttons for listings */}
-
-          {/* <Link
-            to="/Blogs"
-            className="hover:text-yellow-400/95 transition duration-400 delay-50"
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-3xl text-gray-800"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            Blogs
-          </Link> */}
-          <Link
-            to="/Contact"
-            className="hover:text-yellow-400/95 transition duration-400 delay-50"
-          >
-            Contact Us
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-2xl text-gray-700"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle Menu"
-        >
-          {menuOpen ? <FiX /> : <FiMenu />}
-        </button>
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white/20 backdrop-blur-sm border-t shadow-lg">
-          <nav className="flex flex-col space-y-4 py-6 px-6 font-medium">
+        <div className="md:hidden bg-white/90 backdrop-blur-md border-t shadow-lg">
+          <nav className="flex flex-col gap-4 py-5 px-6 text-lg">
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-black"
+              className="text-gray-900 hover:text-blue-700"
             >
               Home
             </Link>
             <Link
               to="/About"
               onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-black"
+              className="text-gray-900 hover:text-blue-700"
             >
               About
             </Link>
-            <Link
-              to="/Products"
-              onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-black"
-            >
-              Products
-            </Link>
 
-            {/* Separate buttons for listings (mobile) */}
-            <Link
-              to="/CarpetTile/Listing"
-              onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-yellow-300 font-semibold"
-            >
-              Carpet Tiles
-            </Link>
-            <Link
-              to="/Broadloom/Listing"
-              onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-yellow-300 font-semibold"
-            >
-              Broadloom
-            </Link>
+            {/* Product Buttons */}
+            {/* <Link to="/carpetTile" onClick={() => setMenuOpen(false)} className="bg-yellow-400 text-black py-2 rounded-lg text-center">Carpet Tiles</Link> */}
 
-            <Link
-              to="/Blogs"
-              onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-black"
-            >
-              Blogs
-            </Link>
             <Link
               to="/Contact"
               onClick={() => setMenuOpen(false)}
-              className="text-white hover:text-black"
+              className="text-gray-900 hover:text-blue-700"
             >
               Contact
+            </Link>
+            <Link
+              to="/broadloom"
+              onClick={() => setMenuOpen(false)}
+              className="bg-blue-900 text-white py-2 rounded-lg text-center"
+            >
+              Broadloom
             </Link>
           </nav>
         </div>

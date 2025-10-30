@@ -20,10 +20,23 @@ const items: Item[] = [
     category: "Broadloom",
     isNew: true,
   },
+    {
+    id: "4",
+    sku: "ZD504",
+    image: "/tiles/tile6/I83087 opt 1.png",
+    category: "Broadloom",
+    isNew: true,
+  },
   {
     id: "2",
     sku: "ZD502",
     image: "/tiles/tile3/Z81544_SG011- Completed.png",
+    category: "Broadloom",
+  },
+  {
+    id: "5",
+    sku: "ZD505",
+    image: "/tiles/tile9/Z81541_SG008-Completed.png",
     category: "Broadloom",
   },
   {
@@ -32,19 +45,8 @@ const items: Item[] = [
     image: "/tiles/tile4/BACKGROUND RUG 1_Flat_Completed.png",
     category: "Broadloom",
   },
-  {
-    id: "4",
-    sku: "ZD504",
-    image: "/tiles/tile6/I83087 opt 1.png",
-    category: "Broadloom",
-    isNew: true,
-  },
-  {
-    id: "5",
-    sku: "ZD505",
-    image: "/tiles/tile9/Z81541_SG008-Completed.png",
-    category: "Broadloom",
-  },
+
+  
 ];
 
 export default function Listing() {

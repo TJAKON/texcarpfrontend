@@ -200,182 +200,6 @@ export default function BroadloomDetails() {
   }, [dynamicTile, productImage]);
 
   // // Canvas Drawing — Room View with carpet texture
-
-  // useEffect(() => {
-  //   const canvas = roomCanvasRef.current;
-  //   if (!canvas || !roomImage) return;
-
-  //   const width = canvas.width;
-  //   const height = canvas.height;
-
-  //   // ⚡ Use a single WebGL renderer (no 2D mixing)
-  //   const renderer = new THREE.WebGLRenderer({
-  //     canvas,
-  //     alpha: true,
-  //     antialias: true,
-  //   });
-  //   renderer.setSize(width, height);
-  //   renderer.setClearColor(0xfffff, 0); // Transparent background
-
-  //   // 🎥 Scene setup
-  //   const scene = new THREE.Scene();
-
-  //   // 📸 Perspective camera — you can tune this angle
-  //   const camera = new THREE.PerspectiveCamera(65, width / height, 0.1, 1000);
-  //   camera.position.set(0, 4, 8);
-  //   camera.lookAt(0, 0, 0);
-  //   scene.add(camera);
-
-  //   // 💡 Lighting
-  //   const light = new THREE.DirectionalLight(0xffffff, 1);
-  //   light.position.set(0, 10, 10);
-  //   scene.add(light);
-
-  //   // 🧶 Carpet texture setup
-  //   const textureSrc = productImage || dynamicTile;
-  //   if (!textureSrc) return;
-
-  //   // Convert image source to THREE texture
-  //   const texture = new THREE.Texture(textureSrc);
-  //   texture.needsUpdate = true;
-
-  //   // ❌ No repeat — show it as one stretched carpet
-  //   texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
-  //   texture.repeat.set(1, 1);
-
-  //   // 🧱 Create a single carpet plane
-  //   const geometry = new THREE.PlaneGeometry(10, 8); // wider plane for floor
-  //   const material = new THREE.MeshPhongMaterial({
-  //     map: texture,
-  //     side: THREE.DoubleSide,
-  //   });
-
-  //   const floor = new THREE.Mesh(geometry, material);
-  //   floor.rotation.x = -Math.PI / 2; // lay flat
-  //   floor.position.y = 0;
-  //   scene.add(floor);
-
-  //   // 🖼️ Room background — make it a large rectangle behind everything
-  //   const roomTexture = new THREE.Texture(roomImage);
-  //   roomTexture.needsUpdate = true;
-
-  //   const roomMaterial = new THREE.MeshBasicMaterial({
-  //     map: roomTexture,
-  //     transparent: true,
-  //     depthTest: false, // ensures it's drawn behind the carpet
-  //   });
-
-  //   // const roomPlane = new THREE.Mesh(
-  //   //   new THREE.PlaneGeometry(12, 9),
-  //   //   roomMaterial
-  //   // );
-  //   // roomPlane.position.z = 1; // slightly behind carpet
-  //   // roomPlane.position.y = 1; // lift it so floor aligns better
-  //   // scene.add(roomPlane);
-
-  //   const aspect = roomImage.width / roomImage.height;
-  //   const planeHeight = 5;
-  //   const planeWidth = planeHeight * aspect;
-
-  //   const roomPlane = new THREE.Mesh(
-  //     new THREE.PlaneGeometry(planeWidth, planeHeight),
-  //     roomMaterial
-  //   );
-  //   roomPlane.position.z = -5; // further back
-  //   roomPlane.position.y = planeHeight / 2; // align bottom
-  //   scene.add(roomPlane);
-
-  //   // 🔁 Render once (or make it animate)
-  //   renderer.render(scene, camera);
-
-  //   // ♻️ Cleanup
-  //   return () => {
-  //     renderer.dispose();
-  //     geometry.dispose();
-  //     material.dispose();
-  //     texture.dispose();
-  //     roomTexture.dispose();
-  //   };
-  // }, [dynamicTile, productImage, roomImage]);
-
-  // useEffect(() => {
-  //   const canvas = roomCanvasRef.current;
-  //   // We need roomImage to be loaded, but we DON'T render it here
-  //   if (!canvas || !roomImage) return;
-
-  //   const width = canvas.width;
-  //   const height = canvas.height;
-
-  //   // Setup WebGL renderer
-  //   const renderer = new THREE.WebGLRenderer({
-  //     canvas,
-  //     alpha: true, // Transparent background
-  //     antialias: true,
-  //   });
-  //   renderer.setSize(width, height);
-  //   renderer.setClearColor(0x000000, 0); // Fully transparent
-
-  //   const scene = new THREE.Scene();
-
-  //   // --- 💡 TWEAK CAMERA ---
-  //   // This is the most important part. You must position this
-  //   // to match the perspective of your room.png
-  //   const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
-  //   camera.position.set(0, 3, 5); // Start lower and closer
-  //   camera.lookAt(0, 0, 0); // Look at the center of the floor
-
-  //   // Light setup
-  //   const light = new THREE.AmbientLight(0xffffff, 1.2); // Brighter ambient light
-  //   scene.add(light);
-
-  //   // --- ✅ FIXED TEXTURE LOADING ---
-  //   const textureSrc = productImage || dynamicTile;
-  //   if (!textureSrc) return;
-
-  //   const textureLoader = new THREE.TextureLoader();
-  //   let texture: THREE.Texture;
-
-  //   if (productImage) {
-  //     // Case 1: We have an already-loaded HTMLImageElement
-  //     texture = new THREE.Texture(productImage);
-  //     texture.needsUpdate = true;
-  //   } else {
-  //     // Case 2: We have a string (data URI) from dynamicTile
-  //     texture = textureLoader.load(SVG_MASK_PATH as string);
-  //   }
-
-  //   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  //   // 💡 TWEAK REPEAT (e.g., 4x4)
-  //   texture.repeat.set(4, 4);
-
-  //   // --- 💡 TWEAK GEOMETRY ---
-  //   // Create a plane (floor). Make it larger to fill the view.
-  //   const geometry = new THREE.PlaneGeometry(20, 20);
-  //   const material = new THREE.MeshBasicMaterial({
-  //     // MeshBasicMaterial doesn't need lights
-  //     map: texture,
-  //   });
-
-  //   const floor = new THREE.Mesh(geometry, material);
-  //   floor.rotation.x = -Math.PI / 2; // Make it flat (horizontal)
-  //   floor.position.y = 0; // 💡 TWEAK this to move floor up/down
-  //   scene.add(floor);
-
-  //   // Render the 3D scene
-  //   renderer.render(scene, camera);
-
-  //   // --- ❌ REMOVED: All 2D context or roomPlane logic ---
-
-  //   // Cleanup
-  //   return () => {
-  //     renderer.dispose();
-  //     geometry.dispose();
-  //     material.dispose();
-  //     texture.dispose();
-  //   };
-  // }, [dynamicTile, productImage, roomImage]);
-
-  // Room Canvas (Three.js)
   useEffect(() => {
     const canvas = roomCanvasRef.current;
     if (!canvas || !roomImage) return;
@@ -388,20 +212,21 @@ export default function BroadloomDetails() {
       alpha: true,
       antialias: true,
     });
-    // renderer.setSize(width, height);
-    // renderer.setClearColor(0x000000, 0);
 
     const scene = new THREE.Scene();
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(65, width / height, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
+    camera.fov = 55;
     camera.position.set(0, 4, 16);
     camera.lookAt(0, 4, 16);
+    camera.updateProjectionMatrix();
 
-    // Light
-    const light = new THREE.DirectionalLight(0xffffff, 1.5);
-    light.position.set(12, 12, 12);
-    scene.add(light);
+    scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+
+    const keyLight = new THREE.DirectionalLight(0xffe6c9, 0.4);
+    keyLight.position.set(0, 10, 10);
+    scene.add(keyLight);
 
     // Carpet texture
     const textureSrc = productImage || dynamicTile;
@@ -412,30 +237,27 @@ export default function BroadloomDetails() {
     carpetTexture.wrapS = carpetTexture.wrapT = THREE.RepeatWrapping;
     carpetTexture.repeat.set(3, 3);
 
-    // const floorPoints = [
-    //   new THREE.Vector2(-6, -3), // bottom left
-    //   new THREE.Vector2(6, -3), // bottom right
-    //   new THREE.Vector2(8, 1), // upper right
-    //   new THREE.Vector2(-8, 1), // upper left
-    // ];
-    // const floorShape = new THREE.Shape(floorPoints);
-    // const floorGeometry = new THREE.ShapeGeometry(floorShape);
-
-    // const floorMaterial = new THREE.MeshPhongMaterial({
-    //   map: carpetTexture,
-    //   side: THREE.DoubleSide,
-    // });
-
-    // const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    // floor.rotation.x = -Math.PI / 2;
-    // floor.position.y = 0;
-    // scene.add(floor);
+    carpetTexture.colorSpace = THREE.SRGBColorSpace;
+    carpetTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    carpetTexture.magFilter = THREE.LinearFilter;
+    carpetTexture.minFilter = THREE.LinearMipmapLinearFilter;
 
     const floorGeometry = new THREE.PlaneGeometry(20, 20);
-    const floorMaterial = new THREE.MeshPhongMaterial({
+    floorGeometry.setAttribute(
+      "uv2",
+      new THREE.BufferAttribute(floorGeometry.attributes.uv.array, 2)
+    );
+
+    const floorMaterial = new THREE.MeshStandardMaterial({
       map: carpetTexture,
-      side: THREE.DoubleSide,
+      roughness: 0.88,
+      metalness: -2,
+      aoMap: carpetTexture,
+      aoMapIntensity: 0.35,
+      opacity: 2,
+      transparent: true,
     });
+
     const floor = new THREE.Mesh(floorGeometry, floorMaterial);
     floor.rotation.x = -Math.PI / 2;
     floor.position.y = 0;
@@ -451,10 +273,6 @@ export default function BroadloomDetails() {
       // roomTexture.dispose();
     };
   }, [dynamicTile, productImage, roomImage]);
-
-
-
- 
 
   if (!product)
     return (
@@ -487,7 +305,9 @@ export default function BroadloomDetails() {
   // 💠 MAIN LAYOUT
   // ------------------------------------------------------
   return (
-    <div className="mx-auto px-6 pt-24 grid md:grid-cols-5 gap-4">
+    <div
+      className="  mx-auto px-4 sm:px-6 pt-24 grid grid-cols-1 md:grid-cols-5 gap-4"
+    >
       {/* LEFT PANEL */}
       <div className="md:col-span-3">
         {/* Top Tabs */}
@@ -511,13 +331,13 @@ export default function BroadloomDetails() {
             <p></p>
           </div>
         </div>
-        <div className="relative h-full  shadow-lg overflow-hidden bg-gray-100 flex flex-col items-center justify-center">
+        <div className="relative h-[420px] sm:h-full shadow-lg overflow-hidden bg-gray-100 flex flex-col items-center justify-center">
           <canvas
             ref={swatchCanvasRef}
             width={1440}
             height={1980}
             className={clsx(
-              "w-full h-full scale-100 object-cover object-bottom-left transition-opacity",
+              "w-full h-[420px] sm:h-full scale-100 object-cover object-center transition-opacity",
               activeTab === "swatch"
                 ? "opacity-100"
                 : "opacity-0 absolute top-0 left-0"
@@ -526,7 +346,7 @@ export default function BroadloomDetails() {
 
           <div
             className={clsx(
-              " relative h-screen w-full transition-opacity",
+              " relative h-[420px] sm:h-screen w-full transition-opacity",
               activeTab === "room"
                 ? " opacity-100"
                 : "opacity- hidden absolute top-0 left-0"
@@ -537,54 +357,19 @@ export default function BroadloomDetails() {
               width={1440}
               height={1980}
               className={clsx(
-                "w-full h-screen scale-100 object-cover object-bottom-left transition-opacity",
+                "w-full h-[340px] sm:h-screen scale-150 sm:scale-100 object-cover object-bottom transition-opacity",
                 activeTab === "room"
                   ? " opacity-100"
-                  : "opacity-0 absolute top-0 left-0"
+                  : "opacity-0 absolute -top-0 left-0"
               )}
             />
             <img
               src={SVG_MASK_PATH}
               alt="Room Overlay"
-              className="absolute -top-24 left-0 w-full h-screen pointer-events-none"
+              className="absolute -top-48 sm:-top-24 left-0 w-full h-screen pointer-events-none"
             />
           </div>
         </div>
-
-        {/* <div className="relative h-full shadow-lg overflow-hidden bg-gray-100 flex flex-col items-center justify-center">
-          <canvas
-            ref={swatchCanvasRef}
-            width={1440}
-            height={1980}
-            className={clsx(
-              "w-full h-full scale-100 object-cover object-top transition-opacity",
-              activeTab === "swatch"
-                ? "opacity-100"
-                : "opacity-0 absolute top-0 left-0"
-            )}
-          />
-
-          <div
-            className={clsx(
-              "w-full h-screen transition-opacity",
-              activeTab === "room"
-                ? "opacity-100"
-                : "opacity-0 "
-            )}
-          >
-            <canvas
-              ref={roomCanvasRef}
-              width={1440}
-              height={1980}
-              className=" w-full h-screen pointer-events-none"
-            />
-            <img
-              src={SVG_MASK_PATH}
-              alt="Room Overlay"
-              className="absolute -top-20 left-0 w-full h-screen pointer-events-none"
-            />
-          </div>
-        </div> */}
       </div>
 
       {/* RIGHT PANEL */}
@@ -751,13 +536,13 @@ export default function BroadloomDetails() {
         {/* --- BOTTOM BUTTONS SECTION --- */}
         <div className="space-y-6 mt-6">
           {/* Action Buttons (from screenshot) */}
-          <div className="flex items-center justify-between px-5 py-4 border-t">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-0 px-0 sm:px-5 py-4 border-t">
             {/* Save Button */}
             <button
               onClick={() => {
                 /* Handle Save Logic */
               }}
-              className="px-8 py-2 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-700"
+              className="px-0 sm:px-8 py-2 rounded-full w-full sm:w-fit bg-gray-900 text-white font-semibold hover:bg-gray-700"
             >
               Save
             </button>

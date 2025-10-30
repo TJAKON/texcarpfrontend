@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative w-full h-[80vh] md:h-screen overflow-hidden">
+      <section className="relative w-full h-screen md:h-screen overflow-hidden">
         {/* Background with Parallax */}
         {/* <div
           className="absolute inset-0 w-full h-full bg-center bg-cover transform transition-transform duration-700 hover:scale-105"
@@ -41,10 +41,10 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">
             Welcome to <span className="text-yellow-400">TexCarp</span>
           </h1>
-          <p className="text-lg md:text-2xl mb-10 text-gray-200 max-w-2xl drop-shadow">
+          <p className="text-lg md:text-2xl text-gray-200 max-w-2xl drop-shadow">
             Step into the future of carpets with{" "}
             <span className="text-yellow-300 font-semibold uppercase">
               Immersive 2D & 3D
@@ -71,31 +71,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex w-full h-screen overflow-hidden">
-        {panels.map((panel, idx) => (
-          <div
-            key={panel.id}
-            className={`relative flex-1 transition-all duration-900 ease-in-out cursor-pointer
+      <div className=" hidden sm:block">
+        <section className="  flex w-full h-screen overflow-hidden">
+          {panels.map((panel, idx) => (
+            <div
+              key={panel.id}
+              className={`relative flex-1 transition-all duration-900 ease-in-out cursor-pointer
             ${active === idx ? "flex-[2]" : "flex-[1]"}`}
-            onMouseEnter={() => setActive(idx)}
-            onMouseLeave={() => setActive(null)}
-          >
-            {/* Background Image */}
-            <img
-              src={panel.image}
-              alt={panel.title}
-              className="w-full h-full object-cover transition-transform duration-900 hover:scale-90"
-            />
+              onMouseEnter={() => setActive(idx)}
+              onMouseLeave={() => setActive(null)}
+            >
+              {/* Background Image */}
+              <img
+                src={panel.image}
+                alt={panel.title}
+                className="w-full h-full object-cover transition-transform duration-900 hover:scale-90"
+              />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h2 className="text-white text-2xl md:text-3xl font-semibold">
-                {panel.title}
-              </h2>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h2 className="text-white text-2xl md:text-3xl font-semibold">
+                  {panel.title}
+                </h2>
+              </div>
             </div>
-          </div>
-        ))}
-      </section>
+          ))}
+        </section>
+      </div>
     </>
   );
 }
