@@ -306,7 +306,7 @@ export default function BroadloomDetails() {
   // ------------------------------------------------------
   return (
     <div
-      className="  mx-auto px-4 sm:px-6 pt-24 grid grid-cols-1 md:grid-cols-5 gap-4"
+      className="  mx-auto px-4 sm:px-6 pt-26 pb-6 overflow-hidden grid grid-cols-1 md:grid-cols-5 gap-4"
     >
       {/* LEFT PANEL */}
       <div className="md:col-span-3">
